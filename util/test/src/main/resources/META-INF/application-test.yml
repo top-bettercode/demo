@@ -1,0 +1,8 @@
+summer:
+  autodoc:
+    gen:
+      enable: @autodoc.enable@
+      version: v@app.version@
+      table-prefixes: @generator.tablePrefix@
+      data-type: @generator.dataType@
+

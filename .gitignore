@@ -1,6 +1,7 @@
 ### wu template
 .gradle
 /build/
+logs
 
 
 ### STS ###

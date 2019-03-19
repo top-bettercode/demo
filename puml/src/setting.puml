@@ -1,0 +1,24 @@
+PK
+FK
+UNIQUE
+INDEX
+
+@startuml 系统基础
+
+
+entity ac_area {
+    行政区划
+    ==
+    area_id : BIGINT(20) PK AUTO_INCREMENT NOT NULL -- 行政区划主键ID
+    area_code : VARCHAR(200) NULL -- 行政区代码
+    area_name : VARCHAR(200) NULL -- 行政区名称
+    area_path : TEXT NULL -- 行政区路径，">"分隔，示例：湖北省>黄冈市
+    area_parent_code : VARCHAR(200) DEFAULT '-1' NULL -- 行政区父类代码
+    area_level : INT(11) NULL -- 行政区级别
+'    deleted : TINYINT(1) DEFAULT 0 NULL -- 逻辑删除(0：未删除，1：已删除)
+    last_modified_date : DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NULL -- 修改时间
+    created_date : DATETIME DEFAULT CURRENT_TIMESTAMP NULL -- 创建时间
+}
+
+
+@enduml

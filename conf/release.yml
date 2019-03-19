@@ -1,0 +1,13 @@
+# 正式环境
+summer:
+  logging:
+    files:
+      path: logs
+    level:
+      root: info
+    request:
+      ignored-error-status-code: 400,401,403,404,405,406,409,422
+    slack:
+      channel: release
+    websocket:
+      enabled: false

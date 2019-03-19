@@ -1,0 +1,7 @@
+#开发环境
+summer:
+  logging:
+    files:
+      path: ../logs
+    slack:
+      channel: dev

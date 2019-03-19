@@ -1,0 +1,68 @@
+summer:
+  management:
+    auth:
+      password: @summer.management.auth.password@
+  sign:
+    client-secret: @summer.sign.client-secret@
+    handler-type-prefix: @summer.sign.handler-type-prefix@
+  security:
+    url-filter-ignored: /
+    keyStore:
+      alias: @summer.security.keyStore.alias@
+      password: @summer.security.keyStore.password@
+      resource-path: @summer.security.keyStore.resource-path@
+  logging:
+    files:
+      path: @summer.logging.files.path@
+    warn-subject: @application.name@系统异常
+    request:
+      ignored-error-status-code: @summer.logging.request.ignored-error-status-code@
+      timeout-alarm-seconds: @summer.logging.request.timeout-alarm-seconds@
+    log-url: @autodoc.api-host@
+    slack:
+      auth-token: @summer.logging.slack.auth-token@
+      channel: @summer.logging.slack.channel@
+    websocket:
+      enabled: @summer.logging.websocket.enabled@
+
+jasypt:
+  encryptor:
+    password: @jasypt.encryptor.password@
+    provider-name: BC
+    provider-class-name: org.bouncycastle.jce.provider.BouncyCastleProvider
+    algorithm: PBEWITHSHA256AND128BITAES-CBC-BC
+mybatis:
+  mapper-locations: classpath*:/@app.packagePath@/modules/*/*/*.xml
+
+security:
+  oauth2:
+    client:
+      client-id: @security.oauth2.client.client-id@
+      client-secret: @security.oauth2.client.client-secret@
+      access-token-validity-seconds: @security.oauth2.client.access-token-validity-seconds@
+spring:
+  profiles:
+    active: @profiles.active@
+  application:
+    name: @application.name@
+  datasource:
+    hikari:
+      minimum-idle: @datasource.minimum-idle@
+      maximum-pool-size: @datasource.maximum-pool-size@
+    url: @datasource.url@
+    username: @datasource.username@
+    password: @datasource.password@
+#  web:
+#    resources:
+#      static-locations:
+
+server:
+  servlet:
+    context-path: /
+
+logging:
+  level:
+    root: @logging.level.root@
+
+
+

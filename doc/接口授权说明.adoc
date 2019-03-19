@@ -1,0 +1,53 @@
+== 接口授权说明
+
+系统通过OAuth2.0授权保护
+
+.客户端信息
+
+* 客户端信息
+
+----
+client-id: @security.oauth2.client.client-id@
+client-secret: @security.oauth2.client.client-secret@
+----
+
+* 传入方式： 通过 Basic Authentication 方式传入
+
+[%hardbreaks]
+TIP: 用户名追加一个冒号然后串接上口令，并将得出的结果字符串再用Base64算法编码。例如，提供的用户名是Aladdin、口令是open sesame，则拼接后的结果就是Aladdin:open sesame，然后再将其用Base64编码，得到QWxhZGRpbjpvcGVuIHNlc2FtZQ==。具体值可参看登录接口(<<_denglushouquan-huoquaccessToken>>)示例中请求头参数。
+
+
+
+* 获取/刷新access_token等接口都必须传入客户端信息
+
+.示例
+[source,http,options="nowrap"]
+----
+Accept: application/json;version=1.0
+Accept-Language: zh-CN,en-US;q=0.5
+Accept-Encoding: gzip, deflate
+Authorization: Basic xxxxxxxxxxxxxxxxxx==
+
+----
+
+.access_token的使用
+
+* 支持header、application/x-www-form-urlencoded等方式传递，推荐使用http headers方式
+
+例子：
+
+[source,http,options="nowrap"]
+----
+Accept: application/json;version=1.0.b
+Accept-Language: zh-CN,en-US;q=0.5
+Accept-Encoding: gzip, deflate
+Authorization: Bearer xxxx-xxxx-xxxx-xxxx-xxxx
+----
+
+或
+
+----
+http://xxxx/orders?access_token=xxxx-xxxx-xxxx-xxxx-xxxx
+----
+
+TIP: 用户通过授权接口得到access_token后（即每次登录后），另外调用用户信息接口查看用户信息；授权接口不返回用户信息。

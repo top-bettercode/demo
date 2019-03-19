@@ -1,0 +1,6 @@
+ -
+  name: "file"
+  type: "String"
+  description: "上传文件字段名"
+  canCover: false
+  required: false

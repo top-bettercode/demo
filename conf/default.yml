@@ -1,0 +1,44 @@
+#默认配置
+datasource:
+  maximum-pool-size: 10
+  minimum-idle: 1
+logging:
+  level:
+    root: debug
+
+security:
+  oauth2:
+    client:
+      access-token-validity-seconds: 25920000
+      client-id: 123
+      client-secret: 123456
+
+jasypt.encryptor.password: b56pwxua
+
+server.app.port: 8080
+
+summer:
+  sign:
+    client-secret: ''
+    handler-type-prefix: ''
+  management:
+    auth:
+      password: 12345
+  security:
+    keyStore:
+      alias: wintech
+      password: ha7svu6e
+      resource-path: wintech.jks
+  logging:
+    files:
+      path: build/logs
+    level:
+      root: debug
+    request:
+      ignored-error-status-code: 400,401,403,404,405,406,409
+      timeout-alarm-seconds: 5
+    slack:
+      auth-token: ''
+      channel: ''
+    websocket:
+      enabled: true
