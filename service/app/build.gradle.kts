@@ -1,5 +1,5 @@
 dependencies {
-    implementation(project(":core"))
+    implementation(project(":service:core"))
 //    implementation("top.bettercode.summer:excel")
 //    implementation("top.bettercode.summer:api-sign")
 

@@ -7,6 +7,6 @@ pluginManagement {
     }
 }
 
-include("core")
+include(":service:core")
+include(":service:app")
 include(":util:test")
-include("app")
